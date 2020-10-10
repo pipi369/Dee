@@ -31,15 +31,20 @@ public class Practice1 {
     }
 
     public static int[] twoSum(int[] nums, int target) {
-        int[] results = new int[2];
+        int[] results = new int[2]; // 定义返回结果
+        // 记录补数Hash
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) { // 循环
             int current = nums[i];
+            // 如果补数Hash不为空，则计两数相加等于target
             if (map.containsKey(current)) {
+                // 从补数Hash中获得当前值对应的补数
                 results[0] = map.get(current);
+                // 赋值当前值对应的下表
                 results[1] = i;
                 return results;
             }
+            // 记录当前值需要的补数
             map.put(target - current, i);
         }
         return results;
