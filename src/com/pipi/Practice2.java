@@ -22,6 +22,11 @@ public class Practice2 {
      * 链接：https://leetcode-cn.com/problems/add-two-numbers
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      *
+     * 实现方案：模拟
+     *
+     * 时间复杂度：O(max(m,n))
+     * 空间复杂度：O(max(m,n))
+     *
      */
     public static void main(String[] args) {
         ListNode num1 = new ListNode(2);

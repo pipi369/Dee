@@ -23,6 +23,11 @@ public class Practice1 {
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/two-sum
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     *
+     *
+     * 实现方案：Hash表
+     * 算法复杂度 O(N)
+     * 空间复杂度 O(N)
      */
     public static void main(String[] args) {
         int[] nums = new int[]{2, 7, 11, 15};
