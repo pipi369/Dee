@@ -53,7 +53,7 @@ public class Practice4 {
     }
 
 //    /**
-//     * 初始实现思路，用双指针将两个有序数组合并成一个有序数组，然后取中位数
+//     * 方案一，用双指针将两个有序数组合并成一个有序数组，然后取中位数
 //     *
 //     * @param nums1
 //     * @param nums2
@@ -64,7 +64,7 @@ public class Practice4 {
 //        int[] container = new int[nums1.length + nums2.length];
 //        // 设置的数组下表指针
 //        int indexMerge = nums1.length + nums2.length - 1;
-//        // 本别设置两个指针，倒序
+//        // 别设置两个指针，倒序
 //        int index1 = nums1.length - 1, index2 = nums2.length - 1;
 //        // 任意数组不为空，都要进行排序
 //        while (index1 >= 0 || index2 >= 0) {
