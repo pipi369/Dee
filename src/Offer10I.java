@@ -1,11 +1,11 @@
-public class Offer10 {
+public class Offer10I {
 
     public static int fib(int n) {
-        int a = 0, b = 1, sum = 0;
+        int a = 0, b = 1, sum;
         for (int i = 0; i < n; i++) {
             sum = (a + b) % 1000000007;
-            a = b;
-            b = sum;
+            b = a;
+            a = sum;
         }
         return a;
     }

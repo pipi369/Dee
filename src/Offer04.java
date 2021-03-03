@@ -9,22 +9,21 @@ public class Offer04 {
      */
     public static boolean findNumberIn2DArray(int[][] matrix, int target) {
 
-            int row = matrix.length - 1, column = 0;
-            while (row >= 0 && column <= matrix[0].length - 1) {
+        int row = 0, column = matrix[0].length - 1;
+        while (row < matrix.length && column >= 0) {
 
-                if (matrix[row][column] == target) {
-                    return true;
-                }
-
-                if (matrix[row][column] > target) {
-                    row--;
-                } else {
-                    column++;
-                }
-
+            if (matrix[row][column] == target) {
+                return true;
             }
 
-            return false;
+            if (matrix[row][column] > target) {
+                column--;
+            } else {
+                row++;
+            }
+        }
+
+        return false;
     }
 
     public static void main(String[] args) {
@@ -35,10 +34,7 @@ public class Offer04 {
                 {10, 13, 14, 17, 24},
                 {18, 21, 23, 26, 30}
         };
-//        int[][] matrix = new int[][]{
-//                {-5}
-//        };
-        System.out.println(findNumberIn2DArray(matrix, 5));
+        System.out.println(findNumberIn2DArray(matrix, -5));
     }
 
 }

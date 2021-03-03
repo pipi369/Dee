@@ -3,35 +3,29 @@ import java.util.Map;
 
 public class Offer07 {
 
-    private static Map<Integer, Integer> indexMap = new HashMap<>();
+    private static Map<Integer, Integer> inOrderDic = new HashMap<>();
 
     private static TreeNode recur(int[] preorder, int root, int left, int right) {
-        // 递归结果
         if (left > right) {
             return null;
         }
 
-        // 根节点的值
         int rootVal = preorder[root];
 
-        // 构建根节点
         TreeNode node = new TreeNode(rootVal);
 
-        // 划分左子树和右子树
-        int rootIndex = indexMap.get(rootVal);
+        int rootIndex = inOrderDic.get(rootVal);
 
-        // 左子树递归
         node.left = recur(preorder, root + 1, left, rootIndex - 1);
+        node.right = recur(preorder, root + 1 + rootIndex - left, rootIndex + 1, right);
 
-        // 右子树递归
-        node.right = recur(preorder, root + rootIndex - left + 1, rootIndex + 1, right);
         return node;
     }
 
     private static TreeNode buildTree(int[] preorder, int[] inorder) {
         // 将中序遍历的值做个索引
         for (int i = 0; i < inorder.length; i++) {
-            indexMap.put(inorder[i], i);
+            inOrderDic.put(inorder[i], i);
         }
         return recur(preorder, 0, 0, inorder.length - 1);
     }
