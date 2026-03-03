@@ -3,7 +3,7 @@ package array;
 public class LeetCode561 {
 
     /**
-     *  解法：快排
+     * 解法：快排
      *    快排后取双数下表元素累加在一起。
      *
      * @param nums
